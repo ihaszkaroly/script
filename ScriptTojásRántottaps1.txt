@@ -1,0 +1,7 @@
+$szamlalo=1..100
+$username="AndoAttila"
+$secpasswd = ConvertTo-SecureString -String "Almafa12;" -AsPlainText -Force
+$path="OU=Pizzahut,DC=ceg,DC=hu"
+foreach ($i in $szamlalo){
+	New-AdUser -Name $username$i -AccountPassword $secpasswd -Path $path -Enabled $True
+}
